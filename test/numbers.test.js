@@ -220,7 +220,7 @@ describe('Numbers', () => {
 
         test('also works if argument is already a number', () => {
             expect(removeLeadingTrailing(230.000)).toBe(230)
-            expect(removeLeadingTrailing(00402)).toBe(402)
+            expect(removeLeadingTrailing(402)).toBe(402)
             expect(removeLeadingTrailing(3.1400)).toBe(3.14)
             expect(removeLeadingTrailing(30)).toBe(30)
         })
