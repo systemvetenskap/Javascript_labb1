@@ -1,4 +1,5 @@
-const { sum, multiply, isBelowZero, round } = require('../src/numbers')
+const { sum, multiply, isBelowZero, round, addingUp, findMinMax, afterXmasEve2020, sortByStringLength,
+     charCounter, numbersOnly, sortNumbers, personFactory, doublePrice, and, removeLeadingTrailing, getKeysAndValues} = require('../src/numbers')
 
 
 describe('Numbers', () => {
