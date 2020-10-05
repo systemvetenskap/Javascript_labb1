@@ -1,5 +1,5 @@
 const { sum, multiply, isBelowZero, round, addingUp, findMinMax, afterXmasEve2020, sortByStringLength,
-     charCounter, numbersOnly, sortNumbers, personFactory, doublePrice, and, removeLeadingTrailing, getKeysAndValues} = require('../src/numbers')
+     charCounter, numbersOnly, sortNumbers, personFactory, doublePrice, and, removeLeadingTrailing, getKeysAndValues} = require('../src/labb')
 
 
 describe('Numbers', () => {
@@ -62,7 +62,7 @@ describe('Numbers', () => {
     describe('findMinMax takes an array of numbers and returns an object with min max keys containging min max values', () => {
 
         test('[2,3,1] returns {min: 1, max: 2}', () => {
-            expect(findMinMax([2, 3, 1])).toMatchObject({min: 1, max: 2})
+            expect(findMinMax([2, 3, 1])).toMatchObject({min: 1, max: 3})
         })
 
         test('[-1, 100, 50, 27] returns {min: -1, max: 100}', () => {
@@ -87,19 +87,26 @@ describe('Numbers', () => {
             expect(afterXmasEve2020('2020-12-23')).toBe(false)
         })
 
+        test('christmas eve is considered after', () => {
+            expect(afterXmasEve2020('2020-12-24')).toBe(true)
+        })
+
+
     })
 
     describe('sortByStringLength takes an array of strings and returns it sorted based on string length', () => {
 
         test('["longest", "word", "hej"] === ["hej", "word", "longest"]', () => {
-            expect(sortByStringLength(["longest", "word", "hej"])[0]).toBe('hej')
-            expect(sortByStringLength(["longest", "word", "hej"])[1]).toBe('word')
-            expect(sortByStringLength(["longest", "word", "hej"])[2]).toBe('longest')
+            const result = sortByStringLength(["longest", "word", "hej"]) 
+            expect(result[0]).toBe('hej')
+            expect(result[1]).toBe('word')
+            expect(result[2]).toBe('longest')
         })
 
         test('["januari", "februari", "mars", "april"] === ["mars", "april", "januari", "februari"]', () => {
-
-
+            const result = sortByStringLength(["mars", "april", "januari", "februari"])
+            expect(result[0]).toBe('mars')
+            expect(result[3]).toBe('februari')
         })
     })
 
@@ -113,43 +120,42 @@ describe('Numbers', () => {
             expect(charCounter("t", "It Takes Two To Tango")).toBe(5)
         })
 
-    })
+        test('returns 0 if none found', () => {
+            expect(charCounter('z', 'this has none')).toBe(0)
+        })
 
+    })
 
     describe('numbersOnly filters an array and returns a copy containing only numbers', () => {
         test('["hej", 7, 8, false, 3] === [7, 8, 3]', () => {
             const arg = ["hej", 7, 8, false, 3]
-            expect(numbersOnly(arg)).toEqual(expect.toStrictEqual([7, 8, 3]))
-            expect(numbersOnly(arg)).not.arrayContaining(["hej", false])
-            expect(numbersOnly(arg)).arrayContaining([7, 8, 3])
-
+            const result = numbersOnly(arg)
+            expect(result).toEqual([7, 8, 3])
         })
 
-        test('[9, NaN, 2, null, 0, "string", undefined, 4] === [7, 8, 3]', () => {
-            expect().toEqual(expect.toStrictEqual([7, 8, 3]))
+        test('handles all non number values', () => {
+            const arg = [9, NaN, 2, null, 0, "string", undefined, 4]
+            const result = numbersOnly(arg)
+            expect(result).toEqual([9, 2, 0, 4])
         })
 
-        test('[1, -1, 0, 3] === [1, -1, 0, 3]', () => {
-            expect().toEqual(expect.toStrictEqual([1, -1, 0, 3]))
+        test('returns empty array if no numbers', () => {
+            const arg = ['miun', '2020', 'javascript', 'number', '1', '!']
+            const result = numbersOnly(arg)
+            expect(result).toEqual([])
         })
     })
-
 
     describe('sortNumbers takes an array of numbers and a sort order argument. If sortOrder is 1 it sorts ascending, if -1 descending', () => {
         test('sorts ascending', () => {
-            expect(sortNumbers([80, 29, 4, -95, -24, 85], 1)).toEqual(expect.toStrictEqual([-95, -24, 4, 29, 80, 85]))
+            const result = sortNumbers([80, 29, 4, -95, -24, 85], 1) 
+            expect(result).toEqual([-95, -24, 4, 29, 80, 85])
         })
 
         test('sorts descending', () => {
-            expect(sortNumbers([1, 2, 10, 50, 5]), -1).toEqual(expect.toStrictEqual([50, 10, 5, 2, 1]))
+            const result = sortNumbers([1, 2, 10, 50, 5], -1) 
+            expect(result).toEqual([50, 10, 5, 2, 1])
         })
-
-    })
-
-
-    describe('noDuplicates takes an array and returns a copy with no duplicate values', () => {
-
-
 
     })
 
@@ -183,7 +189,9 @@ describe('Numbers', () => {
         const products = [{name: 'tshirt', price: 100}, {name: 'computer', price: 5000}]
         const expected = [{name: 'tshirt', price: 200}, {name: 'computer', price: 10000}]
         test('price has doubled', () => {
-            expect(doublePrice(products)).toEqual(expect.arrayContaining(expected))
+            const result = doublePrice(products) 
+            console.log(result)
+            expect(result).toEqual((expected))
         })
     })
 
@@ -246,4 +254,3 @@ describe('Numbers', () => {
     })
 
 })
-
