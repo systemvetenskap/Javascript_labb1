@@ -69,3 +69,19 @@ To re-run an individual test continously use `jest -t nameMatchingDescribe`. whe
 
 ## Using the debugger
 You can use the [jest runner vs code plugin](https://marketplace.visualstudio.com/items?itemName=firsttris.vscode-jest-runner) to run individual test-cases with the debugger. 
+
+## Submitting your assignment
+You submit your assignment by pushing your work to your own, public, github repo. In the top right corner of github, click the + then new repository. Or, visit (https://github.com/new)[https://github.com/new]. Choose a name for your repo, select public, do not check boxes to add things. Click create repository. Then copy the link to your new repository. It should look something like https://github.com/yourUsername/repoNameYouChose.git .
+
+Then in the command line, where your project is, issue the following commands:
+
+```
+git add .
+git commit -m 'all test cases are passing'
+git remote remove origin
+git remote add https://github.com/yourUsername/repoNameYouChose.git 
+git push -u origin main
+```
+Refresh the page with the repo you created, and you should see your code pushed. 
+
+
