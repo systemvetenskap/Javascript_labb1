@@ -52,8 +52,9 @@ Please note: Passing the test does not necessarily mean you pass the assignment!
 
 ## Getting started
 
-1. Clone this repo and change into its directory `git clone https://github.com/systemvetenskap/Javascript_labb1 && cd miun-js-labb-1`
-2. Install dependencies `npm install`
+1. Clone this repo `git clone https://github.com/systemvetenskap/Javascript_labb1`
+2. Change into the directory you just cloned: `cd Javascript_labb1` 
+3. Install dependencies `npm install`
 
 
 ## Running tests
