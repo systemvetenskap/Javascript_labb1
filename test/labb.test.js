@@ -219,7 +219,7 @@ describe('Labb 0', () => {
     })
 
 
-    describe('removeLeadingTrailing removes leading and trailing zeros from a number, returning the number without leading/trailing', () => {
+    describe('removeLeadingTrailing removes leading and trailing zeros from a string or a number, returning a number without leading/trailing', () => {
         test('removes trailing', () => {
             expect(removeLeadingTrailing('230.000')).toBe(230)
         })
