@@ -1,8 +1,17 @@
+// https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG how require and modules work in JavaScript
 const { sum, multiply, isBelowZero, round, addingUp, findMinMax, afterXmasEve2020, sortByStringLength,
      charCounter, numbersOnly, sortNumbers, personFactory, doublePrice, and, removeLeadingTrailing, getKeysAndValues} = require('../src/labb')
 
 
-describe('Numbers', () => {
+describe('Labb 0', () => {
+
+
+    describe('canary', () => {
+        test('should always pass. Otherwise something may be wrong with test setup', () => {
+            expect(true).toBe(true)
+        })
+
+    })
 
     describe('sum returns sum of two numbers', () => {
         test('adds 1 + 2 to equal 3', () => {
@@ -159,7 +168,7 @@ describe('Numbers', () => {
 
     })
 
-    describe('personFactory returns a new person class with properties firstname, lastname, fullname and initials', () => {
+    describe('personFactory returns a new person object (class) with properties firstname, lastname, fullname and initials', () => {
         const person = new personFactory('Student', 'Studentson')
 
         test('firstname', () => { 

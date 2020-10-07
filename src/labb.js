@@ -20,7 +20,7 @@ function isBelowZero() {
 //etc...
 
 
-
+// https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG how require and modules work in JavaScript
 module.exports.sum = sum
 module.exports.multiply = myOwnMultiplyFunction
 module.exports.isBelowZero = undefined
