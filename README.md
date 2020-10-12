@@ -79,7 +79,7 @@ Then in the command line, where your project is, issue the following commands:
 git add .
 git commit -m 'all test cases are passing'
 git remote remove origin
-git remote add https://github.com/yourUsername/repoNameYouChose.git 
+git remote add origin https://github.com/yourUsername/repoNameYouChose.git 
 git push -u origin main
 ```
 Refresh the page with the repo you created, and you should see your code pushed. 
