@@ -215,6 +215,15 @@ describe('Labb 0', () => {
         test('true', () => {
             and(true, true)
         })
+         
+         
+        test('false if both are not true', () => {
+            expect( and(true, false)).toBe(false)
+        })
+        
+        test('true', () => {
+            expect(and(true, true)).toBe(true)
+        })
 
     })
 
