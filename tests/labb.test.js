@@ -5,8 +5,8 @@ const { sum, multiply, isBelowZero, round, addingUp, findMinMax, afterXmasEve202
 
 describe('Labb 0', () => {
 
-
     describe('canary', () => {
+    
         test('should always pass. Otherwise something may be wrong with test setup', () => {
             expect(true).toBe(true)
         })

@@ -1,11 +1,13 @@
 
 // modifiera sum() tills testet blir godkänt!
-function sum() {
+function sum(a, b) {
 
+    console.log("new")
+    console.log("hej")
 }
 
 function myOwnMultiplyFunction() {
-
+console.log("test")
 }
 
 // denna måste exporteras längst ned i denna fil! annars kan labb.test.js inte importera den.
