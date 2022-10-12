@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node",
+    "test": "jest",
+    "test:debug": "jest --runInBand"
   },
   "keywords": [],
   "author": "",
